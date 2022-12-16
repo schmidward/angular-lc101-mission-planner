@@ -12,14 +12,29 @@ export class CrewComponent implements OnInit {
     {name: "Mae Jemison", firstMission: false},
     {name: "Ellen Ochoa", firstMission: true}
   ];
+  
   memberBeingEdited: object = null;
 
   constructor() { }
 
   ngOnInit() {
+    console.log(this.crew);
+  }
+
+  checkDuplicateName(checkName: string): boolean {
+    for (let i = 0; i < this.crew.length; i++) {
+      if (checkName === this.crew[i]['name']) {
+        return true;
+      }
+    }
+    return false;
   }
 
   add(name: string, isFirst: boolean): void {
+    if (this.checkDuplicateName(name)) {
+      alert('Please enter another name');
+      return;
+    }
     this.crew.push({name: name, firstMission: isFirst});
   }
 
