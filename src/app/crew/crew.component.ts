@@ -29,5 +29,8 @@ export class CrewComponent implements OnInit {
     if (this.crew.length < 3 && !this.crew.includes(person)) {
       this.crew.push(person);
     }
+    if (this.crew.includes(person)){
+      this.crew.splice();
+    }
   }
 }

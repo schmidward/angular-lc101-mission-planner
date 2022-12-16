@@ -6,7 +6,7 @@
 </div>
 <hr>
 <div class="displayBox">
-    <h3>Crew <span [style.visibility]>Full</span></h3>
+    <h3>Crew <span *ngIf="crew.length === 3">Full</span></h3>
     <ol>
         <li *ngFor="let astronaut of crew">{{astronaut.name}}</li>
     </ol>
