@@ -8,7 +8,7 @@
 <div class="displayBox">
     <h3>Crew <span *ngIf="crew.length === 3">Full</span></h3>
     <ol>
-        <li *ngFor="let astronaut of crew">{{astronaut.name}}</li>
+        <li *ngFor="let astronaut of crew" (mouseover)>{{astronaut.name}}</li>
     </ol>
     <!-- Add an img tag here to display astronaut photos. -->
 </div>
